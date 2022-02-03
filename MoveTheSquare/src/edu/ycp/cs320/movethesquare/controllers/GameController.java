@@ -28,7 +28,15 @@ public class GameController {
 
 	public void moveSquare(Game model, Circle circle) {
 		// Set square to move 1.5x faster
+		if(validMove(model, circle) ) {
 		circle.setX(circle.getX() + model.getCircleDx()*1.5);
 		circle.setY(circle.getY() + model.getCircleDy()*1.5);
+		}
+	}
+	public boolean validMove(Game model, Circle circle) {
+		if(circle.getX() >= model.getWidth()-circle.getWidth() || circle.getY() >= model.getHeight()-circle.getHeight() || circle.getX() <= 0 || circle.getY() <= 0) {
+			return false;
+		}
+		return true;
 	}
 }
