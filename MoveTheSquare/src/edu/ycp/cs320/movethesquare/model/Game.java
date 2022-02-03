@@ -11,11 +11,11 @@ public class Game {
 		
 	}
 	
-	public void setSquare(Circle square) {
-		this.circle = square;
+	public void setCircle(Circle circle) {
+		this.circle = circle;
 	}
 	
-	public Circle getSquare() {
+	public Circle getCircle() {
 		return circle;
 	}
 	
@@ -35,19 +35,19 @@ public class Game {
 		return height;
 	}
 	
-	public void setCircleDx(double squareDx) {
-		this.circleDx = squareDx;
+	public void setCircleDx(double circleDx) {
+		this.circleDx = circleDx;
 	}
 	
-	public double getSquareDx() {
+	public double getCircleDx() {
 		return circleDx;
 	}
 	
-	public void setCircleDy(double squareDy) {
-		this.circleDy = squareDy;
+	public void setCircleDy(double circleDy) {
+		this.circleDy = circleDy;
 	}
 	
-	public double getSquareDy() {
+	public double getCircleDy() {
 		return circleDy;
 	}
 }

@@ -51,7 +51,7 @@ public class GameView extends JPanel {
 		if (controller == null) {
 			return;
 		}
-		Circle square = model.getSquare();
+		Circle square = model.getCircle();
 		Point mouseLoc = getMousePosition();
 		if (mouseLoc != null) {
 			controller.computeSquareMoveDirection(model, square, mouseLoc.getX(), mouseLoc.getY());
@@ -67,7 +67,7 @@ public class GameView extends JPanel {
 		// djh2-KEC110-21: changed from GREEN to RED
 		// djh2-YCPlaptop: change from RED to YELLOW
 		g.setColor(Color.YELLOW);
-		Circle square = model.getSquare();
+		Circle square = model.getCircle();
 		
 		g.fillOval((int) square.getX(), (int) square.getY(), (int) square.getWidth(), (int) square.getHeight());
 	}
@@ -85,7 +85,7 @@ public class GameView extends JPanel {
 				circle.setY(220.0);
 				circle.setWidth(20.0);
 				circle.setHeight(20.0);
-				model.setSquare(circle);
+				model.setCircle(circle);
 				
 				GameController controller = new GameController();
 				
