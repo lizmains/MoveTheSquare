@@ -27,6 +27,7 @@ public class GameController {
 	}
 
 	public void moveSquare(Game model, Square square) {
+		// Set square to move 1.5x faster
 		square.setX(square.getX() + model.getSquareDx()*1.5);
 		square.setY(square.getY() + model.getSquareDy()*1.5);
 	}
