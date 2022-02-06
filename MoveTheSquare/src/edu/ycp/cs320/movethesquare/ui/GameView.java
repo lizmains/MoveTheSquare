@@ -30,7 +30,7 @@ public class GameView extends JPanel {
 
 		// djh2-KEC119-21: changed from 30 to 45
 		// djh2-YCPlaptop: change from 45 to 100
-		this.timer = new Timer(1000 / 100, new ActionListener() {
+		this.timer = new Timer(1000 / 20, new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
