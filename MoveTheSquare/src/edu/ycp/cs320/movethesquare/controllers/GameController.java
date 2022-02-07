@@ -1,13 +1,13 @@
 package edu.ycp.cs320.movethesquare.controllers;
 
 import edu.ycp.cs320.movethesquare.model.Game;
-import edu.ycp.cs320.movethesquare.model.Square;
+import edu.ycp.cs320.movethesquare.model.Circle;
 
 public class GameController {
-	public void computeSquareMoveDirection(Game game, Square square, double mouseX, double mouseY) {
+	public void computeSquareMoveDirection(Game game, Circle cirlce, double mouseX, double mouseY) {
 		if (mouseX >= 0 && mouseX < game.getWidth() && mouseY >= 0 && mouseY < game.getHeight()) {
-			double dx = mouseX - (square.getX() + square.getWidth()/2);
-			double dy = mouseY - (square.getY() + square.getHeight()/2);
+			double dx = mouseX - (cirlce.getX() + cirlce.getWidth()/2);
+			double dy = mouseY - (cirlce.getY() + cirlce.getHeight()/2);
 			
 			double moveX = 0, moveY = 0;
 			if (dx > 0) {
@@ -21,13 +21,22 @@ public class GameController {
 				moveY = -Game.MOVE_DIST;
 			}
 			
-			game.setSquareDx(moveX);
-			game.setSquareDy(moveY);
+			game.setCircleDx(moveX);
+			game.setCircleDy(moveY);
 		}
 	}
 
-	public void moveSquare(Game model, Square square) {
-		square.setX(square.getX() + model.getSquareDx());
-		square.setY(square.getY() + model.getSquareDy());
+	public void moveSquare(Game model, Circle circle) {
+		// Set square to move 1.5x faster
+		if(validMove(model, circle) ) {
+		circle.setX(circle.getX() + model.getCircleDx()*1.5);
+		circle.setY(circle.getY() + model.getCircleDy()*1.5);
+		}
+	}
+	public boolean validMove(Game model, Circle circle) {
+		if(circle.getX() >= model.getWidth()-circle.getWidth() || circle.getY() >= model.getHeight()-circle.getHeight() || circle.getX() <= 0 || circle.getY() <= 0) {
+			return false;
+		}
+		return true;
 	}
 }

@@ -1,9 +1,9 @@
 package edu.ycp.cs320.movethesquare.model;
 
-public class Square {
+public class Circle {
 	private double x, y, width, height;
 	
-	public Square() {
+	public Circle() {
 		
 	}
 	
