@@ -25,6 +25,8 @@ public class GameController {
 			game.setCircleDy(moveY);
 		}
 	}
+	//test
+	//test 2
 
 	public void moveSquare(Game model, Circle circle) {
 		// Set square to move 1.5x faster
